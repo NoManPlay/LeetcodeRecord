@@ -1,0 +1,23 @@
+/*
+ * @lc app=leetcode.cn id=383 lang=golang
+ *
+ * [383] 赎金信
+ */
+
+// @lc code=start
+func canConstruct(ransomNote string, magazine string) bool {
+	record := make([]int, 26)
+	for _, v := range magazine {
+		record[v-'a']++
+	}
+	for _, v := range ransomNote {
+		record[v-'a']--
+		if record[v-'a'] < 0 {
+			return false
+		}
+	}
+	return true
+}
+
+// @lc code=end
+
