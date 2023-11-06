@@ -26,7 +26,7 @@ func reverseWords(s string) string {
 
 	reverse(b)
 	last := 0
-	for i := 0; i < len(b); i++ {
+	for i := 0; i <= len(b); i++ {
 		if i == len(b) || b[i] == ' ' {
 			reverse(b[last:i])
 			last = i + 1
